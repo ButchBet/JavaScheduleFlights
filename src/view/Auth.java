@@ -60,8 +60,10 @@ public class Auth extends javax.swing.JFrame {
         emailLabel.setText("Email");
 
         login.setText("Log in");
+        login.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         signUp.setText("Sign up");
+        signUp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

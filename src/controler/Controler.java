@@ -16,7 +16,7 @@ public class Controler {
         this.airlines = airlines;
     }
     
-    public static void start() {
+public static void start() {
         
     }
 }
