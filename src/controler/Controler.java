@@ -9,9 +9,6 @@ import model.Flight;
 
 public class Controler {
     private ArrayList<Airline> airlines;
-    private ArrayList<Airplane> airplanes;
-    private ArrayList<Ticket> flight;
-    private ArrayList<Flight> tickes;
     
     Controler() {}
     
