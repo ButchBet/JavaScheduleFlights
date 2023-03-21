@@ -5,6 +5,8 @@ public class Airplane {
     private boolean state;
     private int capacity;
     private String SN;
+    
+    public Airplane(){}
 
     public Airplane(String name, boolean state, int capacity, String SN) {
         this.name = name;

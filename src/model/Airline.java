@@ -5,13 +5,13 @@ import java.util.ArrayList;
 public class Airline {
     private String name;
     private ArrayList<Airplane> airplanes;    
-    private ArrayList<Ticket> flights;
-    private ArrayList<Flight> tickets;
+    private ArrayList<Flight> flights;
+    private ArrayList<Ticket> tickets;
 
 
-    Airline() {}
+    public Airline() {}
     
-    Airline(String name, ArrayList<Airplane> airplanes, ArrayList<Ticket> flights, ArrayList<Flight> tickets) {
+    public Airline(String name, ArrayList<Airplane> airplanes, ArrayList<Flight> flights, ArrayList<Ticket> tickets) {
         this.name = name;        
         this.airplanes = airplanes;
         this.flights = flights;
@@ -34,19 +34,19 @@ public class Airline {
         this.airplanes = airplanes;
     }
 
-    public ArrayList<Ticket> getFlights() {
+    public ArrayList<Flight> getFlights() {
         return flights;
     }
 
-    public void setFlights(ArrayList<Ticket> flights) {
+    public void setFlights(ArrayList<Flight> flights) {
         this.flights = flights;
     }
 
-    public ArrayList<Flight> getTickets() {
+    public ArrayList<Ticket> getTickets() {
         return tickets;
     }
 
-    public void setTickets(ArrayList<Flight> tickets) {
+    public void setTickets(ArrayList<Ticket> tickets) {
         this.tickets = tickets;
     }
 }

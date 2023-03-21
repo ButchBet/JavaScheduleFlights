@@ -6,6 +6,8 @@ import org.json.simple.*;
 import org.json.simple.parser.*;
 
 public class JSONReader {
+    public JSONReader(){}
+    
     public static JSONObject main(String URL) {
         JSONParser parser = new JSONParser();
         

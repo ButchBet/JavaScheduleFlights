@@ -8,6 +8,8 @@ public class Ticket {
     private String lastName;
     private String userID;
     private boolean category;
+    
+    public Ticket(){}
 
     public Ticket(String ID, double cost, boolean state, String firstName, String lastName, String userID, boolean category) {
         this.ID = ID;

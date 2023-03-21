@@ -10,9 +10,9 @@ import model.Flight;
 public class Controler {
     private ArrayList<Airline> airlines;
     
-    Controler() {}
+    public Controler() {}
     
-    Controler(ArrayList<Airline> airlines) {
+    public Controler(ArrayList<Airline> airlines) {
         this.airlines = airlines;
     }
     
