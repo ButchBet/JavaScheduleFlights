@@ -9,7 +9,7 @@ import model.Ticket;
 import model.Flight;
 
 public class JavaScheduleFlights {
-    private  ArrayList<Airline> airlines;
+    private ArrayList<Airline> airlines;
     private ArrayList<Airplane> airplanes;
     private ArrayList<Ticket> flight;
     private ArrayList<Flight> tickes;
@@ -32,13 +32,6 @@ public class JavaScheduleFlights {
     
     public static void main (String[] args) {
         ArrayList<String> airlinesName = new ArrayList();
-        
-        airlinesName.add("DragonLine");
-        airlinesName.add("NinjaLine");
-        airlinesName.add("AviancaLine");
-        
-        System.out.println(args.toString());
-        
         
         Scanner cmd = new Scanner(System.in);
         
