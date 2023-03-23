@@ -43,7 +43,7 @@ public class Controler implements ActionListener {
         
         // Initialazing the test credentials
         this.testCredentials.add("k.salazar@utp.edu.co");       
-        this.testCredentials.add("HelloWorld");        
+        this.testCredentials.add("HelloWorld1023@");        
     }
     
     public void start() {
@@ -65,10 +65,16 @@ public class Controler implements ActionListener {
     
     private void login(String email, String password) {
         // Validate if the email or password are empty 
-        if(authValidation.areEmpty(email, password)) {
-            auth.setVisible(false);
+        if(!authValidation.areEmpty(email, password)) {
+            // TODO: In this session we should add the code that search in the data base, however we are not doing it right now. 
+            // We are planing to use a JSON file in order to read and write users becase we don't have knowledge in Data Bases and servers hehe
+            if(authValidation.foundEmail(testCredentials.get(0), email) && authValidation.foundPassword(testCredentials.get(1), password)) {
+                auth.setVisible(false);
+                home.setVisible(true);
+            } else {
+                auth.message.setText("Invalid email or password");
+            }
             
-            home.setVisible(true);
         } else {
             auth.message.setText("Email or password empty");
         }        
@@ -82,7 +88,7 @@ public class Controler implements ActionListener {
             System.out.println(authValidation.isPassword(password));
             
             if(authValidation.isEmail(email) && authValidation.isPassword(password)) {
-                // TODO: In this section we should add code that add a new user in the data base, however we are not doing it right now. 
+                // TODO: In this session we should add code that add a new user in the data base, however we are not doing it right now. 
                 // We are planing to use a JSON file in order to read and write users becase we don't have knowledge in Data Bases and servers hehe
                 
                 auth.setVisible(false);
@@ -93,5 +99,6 @@ public class Controler implements ActionListener {
         } else {
             auth.message.setText("Email or password empty");
         } 
+        
     }
 }

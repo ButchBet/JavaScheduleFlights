@@ -39,4 +39,12 @@ public class AuthValidation {
         
         return matcher.find();
     }
+    
+    public boolean foundEmail(String email,String inputEmail) {
+        return email.equals(inputEmail);
+    }
+    
+    public boolean foundPassword(String password, String inputPassword) {
+        return password.equals(inputPassword);
+    }
 }
