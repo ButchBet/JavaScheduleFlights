@@ -28,12 +28,12 @@ public class Auth extends javax.swing.JFrame {
     private void initComponents() {
 
         email = new javax.swing.JTextField();
-        password = new javax.swing.JTextField();
         passwordLabel = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         message = new javax.swing.JLabel();
         login = new javax.swing.JButton();
         signUp = new javax.swing.JButton();
+        password = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,15 +43,6 @@ public class Auth extends javax.swing.JFrame {
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
-            }
-        });
-
-        password.setFont(new java.awt.Font("Yu Gothic Medium", 0, 16)); // NOI18N
-        password.setToolTipText("");
-        password.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.lightGray, null, null));
-        password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
             }
         });
 
@@ -65,6 +56,12 @@ public class Auth extends javax.swing.JFrame {
         signUp.setText("Sign up");
         signUp.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,7 +69,6 @@ public class Auth extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -82,8 +78,9 @@ public class Auth extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(137, 137, 137)
                         .addComponent(message))
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(95, 95, 95))
+                    .addComponent(password)
+                    .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,11 +88,11 @@ public class Auth extends javax.swing.JFrame {
                 .addGap(113, 113, 113)
                 .addComponent(emailLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(passwordLabel)
                 .addGap(4, 4, 4)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(message)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -157,7 +154,7 @@ public class Auth extends javax.swing.JFrame {
     private javax.swing.JLabel emailLabel;
     public javax.swing.JButton login;
     public javax.swing.JLabel message;
-    public javax.swing.JTextField password;
+    private javax.swing.JPasswordField password;
     private javax.swing.JLabel passwordLabel;
     public javax.swing.JButton signUp;
     // End of variables declaration//GEN-END:variables

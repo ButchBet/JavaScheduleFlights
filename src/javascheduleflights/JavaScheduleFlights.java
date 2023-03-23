@@ -1,19 +1,21 @@
 package javascheduleflights;
 
 import java.util.ArrayList;
-import model.Airline;
-import controler.Controler;
+import controler.*;
 import java.io.*;
 import java.util.Date;
 import java.util.Scanner;
-import model.Airplane;
-import model.Ticket;
-import model.Flight;
+import model.*;
 import org.json.simple.*;
+import view.*;
 
 public class JavaScheduleFlights {
     public static void main (String[] args) {
         ArrayList<Airline> airlines = new ArrayList();
+        Auth auth = new Auth();
+        Home home = new Home();
+        CheckFlights checkFlights = new CheckFlights();
+                
         ArrayList<JSONObject> arrayOfAirlines = new ArrayList();        
         ArrayList<JSONObject> arrayOfAirplanes = new ArrayList();        
         ArrayList<JSONObject> arrayOfFlights = new ArrayList();        
@@ -91,10 +93,13 @@ public class JavaScheduleFlights {
             airlines.add(airline);
         }
         
-        toString(airlines);
-        //System.out.println(airlines.get(2).toString());
+        Controler controler = new Controler(airlines, auth, home, checkFlights);
+        
+        auth.setVisible(true);
     }
     
+    
+    // Method user to check that the Airlines were setted correctly
     public static void toString(ArrayList<Airline> airlines) {
         String finalText = "Airlines\n";
         
