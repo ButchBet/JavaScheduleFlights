@@ -91,7 +91,19 @@ public class JavaScheduleFlights {
             airlines.add(airline);
         }
         
+        toString(airlines);
+        //System.out.println(airlines.get(2).toString());
+    }
+    
+    public static void toString(ArrayList<Airline> airlines) {
+        String finalText = "Airlines\n";
         
-        System.out.println("");
+        if(!airlines.isEmpty()) {
+            for(int i = 0; i < airlines.size(); i++) {
+                finalText += (i + 1) + airlines.get(i).toString() + "\n\n\n" ;
+            }
+        }
+        
+        System.out.println(finalText);
     }
 }

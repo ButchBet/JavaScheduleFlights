@@ -48,6 +48,6 @@ public class Airplane {
     }
     
     public String toString() {
-        return ("Name: " + name + " - State: " + state + " - Capacity:" + capacity + " - SN: " + SN);
+        return ("Name: " + name + " - State: " + state + " - Capacity: " + capacity + " - SN: " + SN);
     }
 }

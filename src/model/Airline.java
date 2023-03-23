@@ -49,4 +49,35 @@ public class Airline {
     public void setTickets(ArrayList<Ticket> tickets) {
         this.tickets = tickets;
     }
+    
+    public String toString() {
+        int i;
+        String finalText = "Name: " + name + "\n\nAirplanes";
+        
+        // Loop to get the string to the Airplanes
+        if(!airplanes.isEmpty()) { // Avoid a size 0 error
+            for(i = 0; i < airplanes.size(); i++) {
+                finalText +=  "\n" + (i + 1) + ": " + airplanes.get(i).toString();
+            }
+        }
+        
+        finalText += "\n\nFlights";
+        
+        //Loop to get the string to the Flights
+        if(!flights.isEmpty()) {
+            for(i = 0; i < flights.size(); i++) {
+                finalText += "\n" + (i + 1) + ": " + flights.get(i).toString(); 
+            }
+        }
+        
+        finalText += "\n\nTickets";
+        // Loop to get the string to the Tickets
+        if(!tickets.isEmpty()) {
+            for(i = 0; i < tickets.size(); i++) {
+                finalText += "\n" + (i + 1) + ": " + tickets.get(i).toString();
+            }
+        }
+        
+        return finalText;
+    }
 }
