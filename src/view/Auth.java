@@ -154,7 +154,7 @@ public class Auth extends javax.swing.JFrame {
     private javax.swing.JLabel emailLabel;
     public javax.swing.JButton login;
     public javax.swing.JLabel message;
-    private javax.swing.JPasswordField password;
+    public javax.swing.JPasswordField password;
     private javax.swing.JLabel passwordLabel;
     public javax.swing.JButton signUp;
     // End of variables declaration//GEN-END:variables
