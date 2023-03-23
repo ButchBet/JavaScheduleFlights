@@ -29,6 +29,7 @@ public class JavaScheduleFlights {
         
         // Filling the Airlanes ArrayList with the respective properties, in this case also the Airplanes, tickets and Flights ArrayLists
         for(int i = 0; i < arrayOfAirlines.size(); i++){ 
+            // ArraysLists to save the airplanes, flights and tickets because they are in JSONObject inside the Airlines ArrayList
             ArrayList<Airplane> airplanes = new ArrayList();
             ArrayList<Flight> flights = new ArrayList();
             ArrayList<Ticket> tickets = new ArrayList();
@@ -90,6 +91,7 @@ public class JavaScheduleFlights {
             airlines.add(airline);
         }
         
-        System.out.println(airlines);
+        
+        System.out.println("");
     }
 }

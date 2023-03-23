@@ -76,4 +76,8 @@ public class Ticket {
     public void setCategory(boolean category) {
         this.category = category;
     }
+    
+    public String toString() {
+        return ("ID: " + ID + " - Cost: " + cost + " - State: " + state + " - First name: " + firstName + " - Last name" + lastName + " - User ID: " + userID + " - Category: " + category);
+    }
 }

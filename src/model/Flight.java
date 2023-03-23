@@ -87,5 +87,9 @@ public class Flight {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
-    }   
+    }  
+    
+    public String toString() {
+        return ("State: " + state + " - From: " + from + " - To:" + to + " - Airplane SN: " + airplaneSN + " - Cost first class: " + costFirstClass + " - Cost second class: " + costSecondClass + " - Date: " + date.toString() + " - Capacity: " + capacity);
+    }
 }

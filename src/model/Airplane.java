@@ -46,4 +46,8 @@ public class Airplane {
     public void setSN(String SN) {
         this.SN = SN;
     }
+    
+    public String toString() {
+        return ("Name: " + name + " - State: " + state + " - Capacity:" + capacity + " - SN: " + SN);
+    }
 }
