@@ -1,5 +1,6 @@
 package controler;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Scanner;
 import model.*;
@@ -8,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.SwingConstants;
 
 public class Controler implements ActionListener {
     private ArrayList<Airline> airlines;
@@ -77,7 +79,7 @@ public class Controler implements ActionListener {
             
         } else {
             auth.message.setText("Email or password empty");
-        }        
+        }      
     }
     
     private void signUp(String email, String password) {
@@ -87,7 +89,7 @@ public class Controler implements ActionListener {
             System.out.println(authValidation.isEmail(email));
             System.out.println(authValidation.isPassword(password));
             
-            if(authValidation.isEmail(email) && authValidation.isPassword(password)) {
+            if(authValidation.isEmail(email) && authValidation.isPassword(password) && !authValidation.foundEmail(testCredentials.get(0), email)) {
                 // TODO: In this session we should add code that add a new user in the data base, however we are not doing it right now. 
                 // We are planing to use a JSON file in order to read and write users becase we don't have knowledge in Data Bases and servers hehe
                 
