@@ -49,7 +49,9 @@ public class Controler implements ActionListener {
     }
     
     public void start() {
-        auth.setTitle("JavaScheduleFlights");
+        auth.setTitle("Log In & Sing Up");
+        home.setTitle("Home");
+        checkFlights.setTitle("Check Flights");
         auth.setVisible(true);
     }
     
