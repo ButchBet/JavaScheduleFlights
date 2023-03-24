@@ -15,6 +15,7 @@ public class JavaScheduleFlights {
         Auth auth = new Auth();
         Home home = new Home();
         CheckFlights checkFlights = new CheckFlights();
+        FlightsContent flightsContent = new FlightsContent();
         AuthValidation authValidation = new AuthValidation();
                 
         ArrayList<JSONObject> arrayOfAirlines = new ArrayList();        
@@ -94,7 +95,7 @@ public class JavaScheduleFlights {
             airlines.add(airline);
         }
         
-        Controler controler = new Controler(airlines, auth, home, checkFlights, authValidation);
+        Controler controler = new Controler(airlines, auth, home, checkFlights, flightsContent, authValidation);
         
         // Startin the Graphic program
         controler.start();

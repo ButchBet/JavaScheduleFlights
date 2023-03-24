@@ -28,26 +28,36 @@ public class CheckFlights extends javax.swing.JFrame {
     private void initComponents() {
 
         flightsInformation = new javax.swing.JButton();
-        flightsSchedule = new javax.swing.JButton();
-        back = new javax.swing.JButton();
-        flightsRate = new javax.swing.JButton();
+        flightsDate = new javax.swing.JButton();
+        backToHome = new javax.swing.JButton();
+        flightsCost = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         flightsInformation.setText("Flights information");
         flightsInformation.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        flightsSchedule.setText("Flights schedule");
-        flightsSchedule.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        back.setText("Back");
-        back.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        flightsRate.setText("Flights rate");
-        flightsRate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        flightsRate.addActionListener(new java.awt.event.ActionListener() {
+        flightsInformation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                flightsRateActionPerformed(evt);
+                flightsInformationActionPerformed(evt);
+            }
+        });
+
+        flightsDate.setText("Flights date");
+        flightsDate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        flightsDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                flightsDateActionPerformed(evt);
+            }
+        });
+
+        backToHome.setText("Back to home");
+        backToHome.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        flightsCost.setText("Flights cost");
+        flightsCost.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        flightsCost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                flightsCostActionPerformed(evt);
             }
         });
 
@@ -58,32 +68,40 @@ public class CheckFlights extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(125, 125, 125)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(flightsSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(flightsRate, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(flightsDate, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(flightsCost, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(flightsInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(backToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(flightsSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(flightsDate, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addComponent(flightsRate, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(flightsCost, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
                 .addComponent(flightsInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backToHome, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void flightsRateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightsRateActionPerformed
+    private void flightsCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightsCostActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_flightsRateActionPerformed
+    }//GEN-LAST:event_flightsCostActionPerformed
+
+    private void flightsDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightsDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_flightsDateActionPerformed
+
+    private void flightsInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightsInformationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_flightsInformationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,9 +139,9 @@ public class CheckFlights extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton back;
+    public javax.swing.JButton backToHome;
+    public javax.swing.JButton flightsCost;
+    public javax.swing.JButton flightsDate;
     public javax.swing.JButton flightsInformation;
-    public javax.swing.JButton flightsRate;
-    public javax.swing.JButton flightsSchedule;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,16 +16,18 @@ public class Controler implements ActionListener {
     private Auth auth;
     private Home home;
     private CheckFlights checkFlights;
+    private FlightsContent flightsContent;
     private AuthValidation authValidation;
     private ArrayList<String> testCredentials = new ArrayList();
     
     public Controler() {}
     
-    public Controler(ArrayList<Airline> airlines, Auth auth, Home home, CheckFlights checkFlights, AuthValidation authValidation) {
+    public Controler(ArrayList<Airline> airlines, Auth auth, Home home, CheckFlights checkFlights, FlightsContent flightsContent, AuthValidation authValidation) {
         this.airlines = airlines;
         this.auth = auth;        
         this.home = home;        
         this.checkFlights = checkFlights;
+        this.flightsContent = flightsContent;
         this.authValidation = authValidation;
         
         // Adding one action listener to each needed element in the Auth window
@@ -35,13 +37,14 @@ public class Controler implements ActionListener {
         // Adding one action istener to each needed element in the Home Window
         this.home.checkFlights.addActionListener(this);
         this.home.bookFlight.addActionListener(this);
-        this.home.buyTicket.addActionListener(this);
         this.home.logOut.addActionListener(this);
         
         //Adding one action listener to each element in the CheckFlights Window
-        this.checkFlights.flightsSchedule.addActionListener(this);
-        this.checkFlights.flightsRate.addActionListener(this);
+        this.checkFlights.flightsDate.addActionListener(this);
+        this.checkFlights.flightsCost.addActionListener(this);
         this.checkFlights.flightsInformation.addActionListener(this);
+        this.checkFlights.backToHome.addActionListener(this);
+    
         
         // Initialazing the test credentials
         this.testCredentials.add("k.salazar@utp.edu.co");       
@@ -52,7 +55,7 @@ public class Controler implements ActionListener {
         auth.setTitle("Log In & Sing Up");
         home.setTitle("Home");
         checkFlights.setTitle("Check Flights");
-        home.setVisible(true);
+        checkFlights.setVisible(true);
     }
     
     @Override
@@ -65,16 +68,31 @@ public class Controler implements ActionListener {
                 signUp(auth.email.getText(), auth.password.getText());
                 break;
             case "Check flights":
-                System.out.println("We are Checking flights.");
+                home.setVisible(false);
+                checkFlights.setVisible(true);
                 break;
             case "Book flights":
                 System.out.println("We are Booking flights.");
                 break;
-            case "Buy ticket":
-                System.out.println("We are Buying ticket.");
-                break;
             case "Log out":
-                System.out.println("We are Loging out.");
+                // TODO: In this session we shoud ad the code that call any method that create the JSON file with the current Arilines data and then use the JSONWriter class to write the airlines.json file.
+                home.setVisible(false);
+                auth.setVisible(true);
+                break;
+            case "Flights date":
+                System.out.println("We are checking Flights by date.");
+                break;
+            case "Flights cost":
+                System.out.println("We are checing Flights by cost.");
+                break;
+            case "Flights information":
+                System.out.println("We are checking Flights by information.");
+                break;
+            case "Back to home":
+                checkFlights.setVisible(false);
+                home.setVisible(true);
+                break;
+                
         }
     }
     
