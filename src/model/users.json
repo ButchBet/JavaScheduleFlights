@@ -1,0 +1,30 @@
+{ 
+    "user1": {
+            "firstName": "Arden",
+            "lastName": "Mcklovin",
+            "age": 22,
+            "ID": 10083654495;
+    },
+
+    "user2": {
+            "firstName": "Camilo",
+            "lastName": "Mubin",
+            "age": 18,
+            "ID": 1003246958;
+    },
+    
+    "user3": {
+            "firstName": "Alejandro",
+            "lastName": "Sans",
+            "age": 20,
+            "ID": 18236547777;
+    },
+
+
+    "user4": {
+            "firstName": "Roberto",
+            "lastName": "Carlo",
+            "age": 28,
+            "ID": 136546995;
+    },
+}
