@@ -13,22 +13,23 @@ import javax.swing.SwingConstants;
 
 public class Controler implements ActionListener {
     private ArrayList<Airline> airlines;
+    private ArrayList<User> users;
     private Auth auth;
     private Home home;
     private CheckFlights checkFlights;
     private FlightsContent flightsContent;
-    private AuthValidation authValidation;
+    private AuthValidation authValidation = new AuthValidation();
     private ArrayList<String> testCredentials = new ArrayList();
     
     public Controler() {}
     
-    public Controler(ArrayList<Airline> airlines, Auth auth, Home home, CheckFlights checkFlights, FlightsContent flightsContent, AuthValidation authValidation) {
+    public Controler(ArrayList<Airline> airlines, ArrayList<User> users, Auth auth, Home home, CheckFlights checkFlights, FlightsContent flightsContent) {
         this.airlines = airlines;
+        this.users = users;
         this.auth = auth;        
         this.home = home;        
         this.checkFlights = checkFlights;
         this.flightsContent = flightsContent;
-        this.authValidation = authValidation;
         
         // Adding one action listener to each needed element in the Auth window
         this.auth.login.addActionListener(this);
