@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import view.Auth;
@@ -44,7 +45,19 @@ public class AuthValidation {
         return email.equals(inputEmail);
     }
     
-    public boolean foundPassword(String password, String inputPassword) {
-        return password.equals(inputPassword);
+    public boolean foundPassword(User user, String password) {
+        return user.getPassword().equals(password);
+    }
+    
+    public static int getUserIndex(ArrayList<User> users, String email) {
+        for(int i = 0; i < users.size(); i++) {
+            if(users.get(i).getEmail().equals(email)) {
+               return i; 
+            }
+        }
+        
+        
+        
+        return -1;
     }
 }

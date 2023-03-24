@@ -13,21 +13,17 @@ public class JavaScheduleFlights {
     public static void main (String[] args) {
         DataBuilding dataBuilding = new DataBuilding();
         
-        //ArrayList<Airline> airlines = dataBuilding.getAirlines("src/model/airlines.json");
-        ArrayList<User> users  = dataBuilding.getUsers("src/model/users.json");
+        ArrayList<Airline> airlines = dataBuilding.getAirlines("src/model/airlines.json");
         
         Auth auth = new Auth();
         Home home = new Home();
         CheckFlights checkFlights = new CheckFlights();
         FlightsContent flightsContent = new FlightsContent();
         
-        //Controler controler = new Controler(airlines, users, auth, home, checkFlights, flightsContent);
+        Controler controler = new Controler(airlines, auth, home, checkFlights, flightsContent);
         
         // Startin the Graphic program
-        //controler.start();
-        
-        System.out.println(users);
-        //System.out.println(airlines);
+        controler.start();
     }
     
     

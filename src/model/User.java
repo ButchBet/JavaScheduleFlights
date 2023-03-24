@@ -3,14 +3,18 @@ package model;
 public class User {
     private String firstName;
     private String lastName;
+    private String email;
+    private String password;
     private int age;
     private Long ID;
     
     public User(){}
 
-    public User(String firstName, String lastName, int age, Long ID) {
+    public User(String firstName, String lastName, String email, String password, int age, Long ID) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
+        this.password = password;
         this.age = age;
         this.ID = ID;
     }
@@ -38,6 +42,22 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
+    
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public Long getID() {
         return ID;
@@ -48,6 +68,6 @@ public class User {
     }
     
     public String toString() {
-        return "Name: " + firstName + " " + lastName + " - Age: " + age + " - ID: " + ID;
+        return "\nName: " + firstName + " " + lastName + " - Email: " + email +  " - Age: " + age + " - ID: " + ID;
     }
 }

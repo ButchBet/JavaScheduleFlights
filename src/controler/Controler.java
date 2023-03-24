@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 
 public class Controler implements ActionListener {
     private ArrayList<Airline> airlines;
-    private ArrayList<User> users;
+    private User user;
     private Auth auth;
     private Home home;
     private CheckFlights checkFlights;
@@ -23,9 +23,8 @@ public class Controler implements ActionListener {
     
     public Controler() {}
     
-    public Controler(ArrayList<Airline> airlines, ArrayList<User> users, Auth auth, Home home, CheckFlights checkFlights, FlightsContent flightsContent) {
+    public Controler(ArrayList<Airline> airlines, Auth auth, Home home, CheckFlights checkFlights, FlightsContent flightsContent) {
         this.airlines = airlines;
-        this.users = users;
         this.auth = auth;        
         this.home = home;        
         this.checkFlights = checkFlights;
@@ -98,11 +97,15 @@ public class Controler implements ActionListener {
     }
     
     private void login(String email, String password) {
+        DataBuilding dataBuilding = new DataBuilding();
+        ArrayList<User> users  = dataBuilding.getUsers("src/model/users.json");
+        
         // Validate if the email or password are empty 
         if(!authValidation.areEmpty(email, password)) {
-            // TODO: In this session we should add the code that search in the data base, however we are not doing it right now. 
-            // We are planing to use a JSON file in order to read and write users becase we don't have knowledge in Data Bases and servers hehe
-            if(authValidation.foundEmail(testCredentials.get(0), email) && authValidation.foundPassword(testCredentials.get(1), password)) {
+            int userIndex = authValidation.getUserIndex(users, email);
+    
+            // If the email exist in and the password match
+            if(userIndex != -1 && authValidation.foundPassword(users.get(userIndex), password)) {
                 auth.setVisible(false);
                 home.setVisible(true);
             } else {

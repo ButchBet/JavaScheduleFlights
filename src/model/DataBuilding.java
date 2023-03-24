@@ -3,7 +3,6 @@ package model;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
-import javascheduleflights.JSONReader;
 import org.json.simple.JSONObject;
 
 public class DataBuilding {
@@ -65,10 +64,12 @@ public class DataBuilding {
         for(int i = 0; i < arrayOfUsers.size(); i++) {
             String firstName = (String)arrayOfUsers.get(i).get("firstName");
             String lastName = (String)arrayOfUsers.get(i).get("lastName");
+            String email = (String)arrayOfUsers.get(i).get("email");
+            String password = (String)arrayOfUsers.get(i).get("password");
             int age = Integer.parseInt(Long.toString((Long)arrayOfUsers.get(i).get("age")));
             long ID = (Long)arrayOfUsers.get(i).get("ID");
             
-            User user = new User(firstName, lastName, age, ID);
+            User user = new User(firstName, lastName, email, password, age, ID);
             
             users.add(user);
         }
