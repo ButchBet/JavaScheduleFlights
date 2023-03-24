@@ -52,7 +52,7 @@ public class Controler implements ActionListener {
         auth.setTitle("Log In & Sing Up");
         home.setTitle("Home");
         checkFlights.setTitle("Check Flights");
-        auth.setVisible(true);
+        home.setVisible(true);
     }
     
     @Override
@@ -64,6 +64,17 @@ public class Controler implements ActionListener {
             case "Sign up":
                 signUp(auth.email.getText(), auth.password.getText());
                 break;
+            case "Check flights":
+                System.out.println("We are Checking flights.");
+                break;
+            case "Book flights":
+                System.out.println("We are Booking flights.");
+                break;
+            case "Buy ticket":
+                System.out.println("We are Buying ticket.");
+                break;
+            case "Log out":
+                System.out.println("We are Loging out.");
         }
     }
     

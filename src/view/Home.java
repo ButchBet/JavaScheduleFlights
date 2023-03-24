@@ -40,7 +40,7 @@ public class Home extends javax.swing.JFrame {
         logOut.setText("Log out");
         logOut.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        bookFlight.setText("Bock flights");
+        bookFlight.setText("Book flights");
         bookFlight.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         bookFlight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
