@@ -8,11 +8,11 @@ import org.json.simple.parser.*;
 public class JSONReader {
     public JSONReader(){}
     
-    public static JSONObject main(String URL) {
+    public static JSONObject main(String path) {
         JSONParser parser = new JSONParser();
         
         try {
-            Object obj = parser.parse(new FileReader(URL));
+            Object obj = parser.parse(new FileReader(path));
          
             JSONObject jsonObject = (JSONObject)obj;
             

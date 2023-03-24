@@ -52,7 +52,28 @@ public class DataBuilding {
     }
     
     public static ArrayList<User> getUsers(String path) {
-        return null;
+        ArrayList<User> users = new ArrayList();
+        ArrayList<JSONObject> arrayOfUsers = new ArrayList();
+        
+        JSONObject JSONUsers = getJSONObject(path);
+        
+        // Saving each user information 
+        JSONUsers.keySet().forEach(key -> {
+            arrayOfUsers.add((JSONObject)JSONUsers.get(key));
+        });
+        
+        for(int i = 0; i < arrayOfUsers.size(); i++) {
+            String firstName = (String)arrayOfUsers.get(i).get("firstName");
+            String lastName = (String)arrayOfUsers.get(i).get("lastName");
+            int age = Integer.parseInt(Long.toString((Long)arrayOfUsers.get(i).get("age")));
+            long ID = (Long)arrayOfUsers.get(i).get("ID");
+            
+            User user = new User(firstName, lastName, age, ID);
+            
+            users.add(user);
+        }
+        
+        return users;
     }
     
     private static JSONObject getJSONObject(String path) {
@@ -65,8 +86,7 @@ public class DataBuilding {
     
     private static ArrayList<Airplane> getAirplanes(ArrayList<JSONObject> data) {
         ArrayList<Airplane> airplanes = new ArrayList();
-        
-        // Loop to save j airplanes of i airline in airplanes
+       
         for(int i = 0; i < data.size(); i++) {
             String name = (String)data.get(i).get("name");                
             boolean state = (boolean)data.get(i).get("state");                
@@ -84,7 +104,6 @@ public class DataBuilding {
     private static ArrayList<Flight> getFlights(ArrayList<JSONObject> data) {
         ArrayList<Flight> flights = new ArrayList();
         
-        // Loop to save j flights of i airline in flights
         for(int i = 0; i < data.size(); i++) {
             boolean state = (boolean)data.get(i).get("state");
             String from = (String)data.get(i).get("from");
@@ -110,7 +129,6 @@ public class DataBuilding {
     private static ArrayList<Ticket> getTickets(ArrayList<JSONObject> data) {
         ArrayList<Ticket> tickets = new ArrayList();
         
-        // Loof to save j tickets of i ariline in tickets 
         for(int i = 0; i < data.size(); i++) {
             String ID = (String)data.get(i).get("ID");
             double cost = Double.parseDouble(Double.toString((Long)data.get(i).get("cost")));

@@ -13,7 +13,7 @@ public class JavaScheduleFlights {
     public static void main (String[] args) {
         DataBuilding dataBuilding = new DataBuilding();
         
-        ArrayList<Airline> airlines = dataBuilding.getAirlines("src/model/airlines.json");
+        //ArrayList<Airline> airlines = dataBuilding.getAirlines("src/model/airlines.json");
         ArrayList<User> users  = dataBuilding.getUsers("src/model/users.json");
         
         Auth auth = new Auth();
@@ -26,12 +26,13 @@ public class JavaScheduleFlights {
         // Startin the Graphic program
         //controler.start();
         
-        toString(airlines);
+        System.out.println(users);
+        //System.out.println(airlines);
     }
     
     
     // Method user to check that the Airlines were setted correctly
-    public static void toString(ArrayList<Airline> airlines) {
+    public static void toStringAirline(ArrayList<Airline> airlines) {
         String finalText = "Airlines\n";
         
         if(!airlines.isEmpty()) {
@@ -41,6 +42,10 @@ public class JavaScheduleFlights {
         }
         
         System.out.println(finalText);
+    }
+    
+    public static void toStringUsers(ArrayList<User> users) {
+        
     }
     
     
