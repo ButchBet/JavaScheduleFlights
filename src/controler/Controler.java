@@ -55,7 +55,7 @@ public class Controler implements ActionListener {
         auth.setTitle("Log In & Sing Up");
         home.setTitle("Home");
         checkFlights.setTitle("Check Flights");
-        checkFlights.setVisible(true);
+        auth.setVisible(true);
     }
     
     @Override
@@ -118,16 +118,14 @@ public class Controler implements ActionListener {
     }
     
     private void signUp(String email, String password) {
+        DataBuilding dataBuilding = new DataBuilding();
+        ArrayList<User> users  = dataBuilding.getUsers("src/model/users.json");
+        
         // Validate if the email and password are empty 
         if(!authValidation.areEmpty(email, password)) {
-            // checking if the email and password have the correct structure
-            System.out.println(authValidation.isEmail(email));
-            System.out.println(authValidation.isPassword(password));
-            
-            if(authValidation.isEmail(email) && authValidation.isPassword(password) && !authValidation.foundEmail(testCredentials.get(0), email)) {
-                // TODO: In this session we should add code that add a new user in the data base, however we are not doing it right now. 
-                // We are planing to use a JSON file in order to read and write users becase we don't have knowledge in Data Bases and servers hehe
-                
+            // Validate if the the email and password structure are correct and then if the email does not exist
+            if(authValidation.isEmail(email) && authValidation.isPassword(password) && authValidation.getUserIndex(users, email) == -1) {
+                // TODO: We should add a new user, we are doing it in the future     
                 auth.setVisible(false);
                 home.setVisible(true);
             } else {

@@ -41,10 +41,6 @@ public class AuthValidation {
         return matcher.find();
     }
     
-    public boolean foundEmail(String email,String inputEmail) {
-        return email.equals(inputEmail);
-    }
-    
     public boolean foundPassword(User user, String password) {
         return user.getPassword().equals(password);
     }
