@@ -16,11 +16,12 @@ public class JavaScheduleFlights {
         ArrayList<Airline> airlines = dataBuilding.getAirlines("src/model/airlines.json");
         
         Auth auth = new Auth();
+        CreateAccount createAccount = new CreateAccount();
         Home home = new Home();
         CheckFlights checkFlights = new CheckFlights();
         FlightsContent flightsContent = new FlightsContent();
         
-        Controler controler = new Controler(airlines, auth, home, checkFlights, flightsContent);
+        Controler controler = new Controler(airlines, auth, createAccount, home, checkFlights, flightsContent);
         
         // Startin the Graphic program
         controler.start();

@@ -15,6 +15,7 @@ public class Controler implements ActionListener {
     private ArrayList<Airline> airlines;
     private User user;
     private Auth auth;
+    private CreateAccount createAccount;
     private Home home;
     private CheckFlights checkFlights;
     private FlightsContent flightsContent;
@@ -23,9 +24,10 @@ public class Controler implements ActionListener {
     
     public Controler() {}
     
-    public Controler(ArrayList<Airline> airlines, Auth auth, Home home, CheckFlights checkFlights, FlightsContent flightsContent) {
+    public Controler(ArrayList<Airline> airlines, Auth auth, CreateAccount createAccount, Home home, CheckFlights checkFlights, FlightsContent flightsContent) {
         this.airlines = airlines;
-        this.auth = auth;        
+        this.auth = auth;  
+        this.createAccount = createAccount;
         this.home = home;        
         this.checkFlights = checkFlights;
         this.flightsContent = flightsContent;
@@ -55,6 +57,7 @@ public class Controler implements ActionListener {
         auth.setTitle("Log In & Sing Up");
         home.setTitle("Home");
         checkFlights.setTitle("Check Flights");
+        createAccount.setTitle("Create account");
         auth.setVisible(true);
     }
     
@@ -65,7 +68,8 @@ public class Controler implements ActionListener {
                 login(auth.email.getText(), auth.password.getText());
                 break;
             case "Sign up":
-                signUp(auth.email.getText(), auth.password.getText());
+                auth.setVisible(false);
+                createAccount.setVisible(true);
                 break;
             case "Check flights":
                 home.setVisible(false);
@@ -118,6 +122,8 @@ public class Controler implements ActionListener {
     }
     
     private void signUp(String email, String password) {
+        
+        
         DataBuilding dataBuilding = new DataBuilding();
         ArrayList<User> users  = dataBuilding.getUsers("src/model/users.json");
         
@@ -134,6 +140,5 @@ public class Controler implements ActionListener {
         } else {
             auth.message.setText("Email or password empty");
         } 
-        
     }
 }
