@@ -36,6 +36,10 @@ public class Controler implements ActionListener {
         this.auth.login.addActionListener(this);
         this.auth.signUp.addActionListener(this);
         
+        // Adding one acction listener to each needed element in the CreateAccount window
+        this.createAccount.createAccount.addActionListener(this);
+        this.createAccount.backToLogin.addActionListener(this);
+        
         // Adding one action istener to each needed element in the Home Window
         this.home.checkFlights.addActionListener(this);
         this.home.bookFlight.addActionListener(this);
@@ -96,7 +100,12 @@ public class Controler implements ActionListener {
                 checkFlights.setVisible(false);
                 home.setVisible(true);
                 break;
-                
+            case "Create Account":
+                signUp(createAccount.firstName.getText(), createAccount.lastName.getText(), createAccount.age.getText(), createAccount.email.getText(), createAccount.password.getText(), createAccount.confirmPassword.getText());
+                break;
+            case "Back to login":
+                createAccount.setVisible(false);
+                auth.setVisible(true);
         }
     }
     
@@ -121,9 +130,14 @@ public class Controler implements ActionListener {
         }      
     }
     
-    private void signUp(String email, String password) {
-        
-        
+    private void signUp(String firstName, String lastName, String age, String email, String password, String confirmPassword) {
+        System.out.println(firstName);
+        System.out.println(lastName);
+        System.out.println(age);
+        System.out.println(email);
+        System.out.println(password);
+        System.out.println(confirmPassword);
+        /*
         DataBuilding dataBuilding = new DataBuilding();
         ArrayList<User> users  = dataBuilding.getUsers("src/model/users.json");
         
@@ -140,5 +154,6 @@ public class Controler implements ActionListener {
         } else {
             auth.message.setText("Email or password empty");
         } 
+    */
     }
 }
