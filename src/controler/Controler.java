@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.SwingConstants;
+import org.json.simple.JSONObject;
 
 public class Controler implements ActionListener {
     private ArrayList<Airline> airlines;
@@ -101,7 +102,7 @@ public class Controler implements ActionListener {
                 home.setVisible(true);
                 break;
             case "Create Account":
-                signUp(createAccount.firstName.getText(), createAccount.lastName.getText(), createAccount.age.getText(), createAccount.email.getText(), createAccount.password.getText(), createAccount.confirmPassword.getText());
+                signUp(createAccount.firstName.getText(), createAccount.lastName.getText(), createAccount.age.getText(), createAccount.email.getText(), createAccount.id.getText(), createAccount.password.getText(), createAccount.confirmPassword.getText());
                 break;
             case "Back to login":
                 createAccount.setVisible(false);
@@ -114,7 +115,7 @@ public class Controler implements ActionListener {
         ArrayList<User> users  = dataBuilding.getUsers("src/model/users.json");
         
         // Validate if the email or password are empty 
-        if(!authValidation.areEmpty(email, password)) {
+        if(!email.isEmpty() && !password.isEmpty()) {
             int userIndex = authValidation.getUserIndex(users, email);
     
             // If the email exist in and the password match
@@ -122,38 +123,45 @@ public class Controler implements ActionListener {
                 auth.setVisible(false);
                 home.setVisible(true);
             } else {
-                auth.message.setText("Invalid email or password");
+                auth.realMessage.setText("Invalid email or password");
             }
             
         } else {
-            auth.message.setText("Email or password empty");
+            auth.realMessage.setText("Email or password empty");
         }      
     }
     
-    private void signUp(String firstName, String lastName, String age, String email, String password, String confirmPassword) {
-        System.out.println(firstName);
-        System.out.println(lastName);
-        System.out.println(age);
-        System.out.println(email);
-        System.out.println(password);
-        System.out.println(confirmPassword);
-        /*
+    private void signUp(String firstName, String lastName, String age, String email, String ID, String password, String confirmPassword) {         
         DataBuilding dataBuilding = new DataBuilding();
         ArrayList<User> users  = dataBuilding.getUsers("src/model/users.json");
         
         // Validate if the email and password are empty 
-        if(!authValidation.areEmpty(email, password)) {
-            // Validate if the the email and password structure are correct and then if the email does not exist
-            if(authValidation.isEmail(email) && authValidation.isPassword(password) && authValidation.getUserIndex(users, email) == -1) {
-                // TODO: We should add a new user, we are doing it in the future     
-                auth.setVisible(false);
+        if(!firstName.isEmpty() && !lastName.isEmpty() && !age.isEmpty() && !email.isEmpty() && !ID.isEmpty() && !password.isEmpty() && !confirmPassword.isEmpty()) {
+            // Validate if the the email, ID, password and age structure are correct and then if the email does not exis
+            if(authValidation.isEmail(email) && authValidation.isPassword(password) &&  authValidation.isID(ID) && authValidation.getUserIndex(users, email) == -1 && authValidation.isANumber(age)) {
+                User newUser = new User(firstName, lastName, email, password, Integer.parseInt(age), Long.parseLong(ID));
+                
+                createAccount.firstName.setText("");
+                createAccount.lastName.setText("");
+                createAccount.email.setText("");
+                createAccount.age.setText("");
+                createAccount.id.setText("");
+                createAccount.password.setText("");
+                createAccount.confirmPassword.setText("");
+                
+                users.add(newUser);
+                
+                this.user = newUser;
+                
+                // TODO: Build the JsonObject of the user and write it in the user.json file
+                
+                createAccount.setVisible(false);
                 home.setVisible(true);
             } else {
-               auth.message.setText("Invalid email or password");
+               auth.message.setText("Invalid data");
             }
         } else {
-            auth.message.setText("Email or password empty");
-        } 
-    */
+            createAccount.message.setText("Any blank space is empty");
+        }
     }
 }

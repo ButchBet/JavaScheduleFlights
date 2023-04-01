@@ -34,6 +34,7 @@ public class Auth extends javax.swing.JFrame {
         login = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
         signUp = new javax.swing.JButton();
+        realMessage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,6 +68,8 @@ public class Auth extends javax.swing.JFrame {
             }
         });
 
+        realMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,7 +87,8 @@ public class Auth extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(signUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(signUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(realMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -104,7 +108,9 @@ public class Auth extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(realMessage)
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,6 +171,7 @@ public class Auth extends javax.swing.JFrame {
     public javax.swing.JLabel message;
     public javax.swing.JPasswordField password;
     private javax.swing.JLabel passwordLabel;
+    public javax.swing.JLabel realMessage;
     public javax.swing.JButton signUp;
     // End of variables declaration//GEN-END:variables
 }

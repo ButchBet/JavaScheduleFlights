@@ -16,15 +16,7 @@ import view.Auth;
  */
 public class AuthValidation {
     public AuthValidation(){}
-       
-    public static boolean areEmpty(String email, String password) {
-        if(email.isEmpty() || password.isEmpty()) {
-            return true;
-        }
-        
-        return false;
-    }
-    
+   
     public boolean isEmail(String email) {
         Pattern pattern = Pattern.compile("[a-zA-Z][\\w-]{1,20}@\\w{2,20}\\.\\w{2,3}");
         
@@ -55,5 +47,29 @@ public class AuthValidation {
         
         
         return -1;
+    }
+    
+    public static boolean isANumber(String number) {
+        try {
+            int value = Integer.parseInt(number);
+            
+            return true;
+        } catch (NumberFormatException e) {
+            System.out.println("This is not an integer.");
+        }
+        
+        return false;
+    }
+    
+    public static boolean isID(String ID) {
+        try {
+            long value = Long.parseLong(ID);
+                    
+            return true;
+        } catch(NumberFormatException e) {
+            System.out.println("This is not a long number");
+        }
+        
+        return false;
     }
 }

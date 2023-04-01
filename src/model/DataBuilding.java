@@ -56,6 +56,8 @@ public class DataBuilding {
         
         JSONObject JSONUsers = getJSONObject(path);
         
+        System.out.println(JSONUsers.toString());
+        
         // Saving each user information 
         JSONUsers.keySet().forEach(key -> {
             arrayOfUsers.add((JSONObject)JSONUsers.get(key));
@@ -145,5 +147,9 @@ public class DataBuilding {
         }
             
          return tickets;
+    }
+    
+    public static JSONObject setUsers(ArrayList<User> users) {
+       return null;
     }
 }

@@ -1,37 +1,6 @@
-{ 
-    "user1": {
-        "firstName": "Arden",
-        "lastName": "Mcklovin",
-        "email": "arden.mcklovin@gmail.com",
-        "password": "cachonFelix001#",
-        "age": 22,
-        "ID": 10083654495
-    },
-
-    "user2": {
-        "firstName": "Camilo",
-        "lastName": "Mubin",
-        "email": "camilo_mubin@outlook.com",
-        "password": "kellysLaReinaDeMiCorazon01@",
-        "age": 18,
-        "ID": 1003246958
-    },
-    
-    "user3": {
-        "firstName": "Alejandro",
-        "lastName": "Sans",
-        "email": "alejandro-sans01@yahoo.com",
-        "password": "estasLasCreaMiEsposa33$",
-        "age": 20,
-        "ID": 18236547777
-    },
-
-    "user4": {
-        "firstName": "Roberto",
-        "lastName": "Carlo",
-        "email": "roberto.carlo@utp.edu.co",
-        "password": "siAsBueno43$",
-        "age": 28,
-        "ID": 136546995
-    },
+{
+    "user1" : {"firstName":"Arden","lastName":"Mcklovin","password":"cachonFelix001#","ID":10083654495,"email":"arden.mcklovin@gmail.com","age":22},
+    "user2" : {"firstName":"Camilo","lastName":"Mubin","password":"kellysLaReinaDeMiCorazon01@","ID":1003246958,"email":"camilo_mubin@outlook.com","age":18},
+    "user3" : {"firstName":"Alejandro","lastName":"Sans","password":"estasLasCreaMiEsposa33$","ID":18236547777,"email":"alejandro-sans01@yahoo.com","age":20},
+    "user4" : {"firstName":"Roberto","lastName":"Carlo","password":"siAsBueno43$","ID":136546995,"email":"roberto.carlo@utp.edu.co","age":28}
 }
